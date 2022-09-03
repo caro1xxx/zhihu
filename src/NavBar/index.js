@@ -25,8 +25,10 @@ export const Index = () => {
     <Fragment>
       <div className="NavBarStyle">
         <div className="topic">
-          <p className="logo">zhihu</p>
-          <div>首页</div>
+          <p className="logo" style={{ color: "#056de8", fontWeight: "bold" }}>
+            知否
+          </p>
+          <div className="home">首页</div>
           <div>学习</div>
           <div>会员</div>
           <div>发现</div>
@@ -38,7 +40,7 @@ export const Index = () => {
               onBlur={inputBlur}
             ></input>
           </h1>
-          <div>提问</div>
+          <button className="question">提问</button>
           <div>消息</div>
           <div>私信</div>
           <div>头像</div>

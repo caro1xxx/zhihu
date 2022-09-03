@@ -1,9 +1,10 @@
 .NavBarStyle{
   width: 100%;
   background-color:white;
-  height: 50px;
+  height: 55px;
   border-bottom: 2px solid rgb(239, 239, 239);
   position:fixed;
+  z-index: 99;
 }
 .topic{
   width: 1200px;
@@ -66,4 +67,19 @@
   left:10px;
   z-index: 1;
   background-color: #f6f6f6;
+}
+
+.question{
+  height: 30px;
+  background-color: #056de8;
+  margin: 10px 0px;
+  width: 70px;
+  border-radius: 20px;
+  outline:none;
+  border: none;
+  color:white
+}
+
+.home{
+  border-bottom: #056de8 5px solid;
 }

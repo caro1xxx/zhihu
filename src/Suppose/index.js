@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
-export const Index = () => {
-  const [Count, setCount] = useState(0);
+export const Index = (props) => {
+  const [Count, setCount] = useState(props.count);
 
   // 增加
   const agreeThat = () => {

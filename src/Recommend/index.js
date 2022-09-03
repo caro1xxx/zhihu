@@ -58,7 +58,7 @@ export const Index = () => {
                     <div className="Expand">阅读全文</div>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Suppose></Suppose>
+                    <Suppose count={item.endorsement}></Suppose>
                     <Options></Options>
                   </div>
                 </div>
@@ -74,7 +74,7 @@ export const Index = () => {
                     </div>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Suppose></Suppose>
+                    <Suppose count={item.endorsement}></Suppose>
                     <Options></Options>
                   </div>
                 </div>
