@@ -4,20 +4,29 @@ import { get } from "../utils/request/fetch";
 import { Index as Loading } from "../Loading";
 import { Index as Suppose } from "../Suppose";
 import { Index as Options } from "../Options";
+import { Index as ReadMore } from "../ReadMore";
 export const Index = () => {
+  // 推荐内容
   const [RecommendContent, setRecommendContent] = useState({
     data: "1",
   });
   // 内容的副本,用于在detail页面展示
   const [copyData, setcopyData] = useState({ data: "2" });
 
+  //传递给 readMore组件的内容
+  const [ReadMoreContent, setReadMoreContent] = useState({
+    data: "",
+    isShowReadMore: false,
+    checkWordId: 0,
+  });
+
   const saveState = (data) => {
     // 先处理数据
     data.forEach((item, index) => {
       if (item.content.length > 20 && item.picture === "null") {
-        item.content = item.content.substring(0, 60) + "...";
+        item.content = item.content.substring(0, 70) + "...";
       } else {
-        item.content = item.content.substring(0, 120) + "...";
+        item.content = item.content.substring(0, 150) + "...";
       }
     });
     // 在存入,如果是先存入再处理后再存入,这样多了一次diff
@@ -42,6 +51,15 @@ export const Index = () => {
     // 这里添加effect依赖为[],防止因为数据发生变化再次触发effect
   }, []);
 
+  //阅读全文
+  const OpenReadMore = (index) => {
+    setReadMoreContent({
+      data: RecommendContent.data[index],
+      isShowReadMore: true,
+      checkWordId: index,
+    });
+  };
+
   return (
     <div>
       {RecommendContent.data === "1" ? (
@@ -53,10 +71,22 @@ export const Index = () => {
               <div className="title">{item.title}</div>
               {item.picture === "null" ? (
                 <div>
-                  <div className="detail">
-                    {item.content}
-                    <div className="Expand">阅读全文</div>
-                  </div>
+                  {ReadMoreContent.isShowReadMore &&
+                  index === ReadMoreContent.checkWordId ? (
+                    <ReadMore content={ReadMoreContent.data}></ReadMore>
+                  ) : (
+                    <div className="detail">
+                      {item.content}
+                      <div
+                        className="Expand"
+                        onClick={() => {
+                          OpenReadMore(index);
+                        }}
+                      >
+                        阅读全文
+                      </div>
+                    </div>
+                  )}
                   <div style={{ display: "flex" }}>
                     <Suppose count={item.endorsement}></Suppose>
                     <Options></Options>

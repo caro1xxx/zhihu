@@ -12,7 +12,7 @@ export const Index = () => {
           <div className="circle" style={{ background: "#e4edff" }}>
             <svg
               t="1662183245817"
-              class="icon"
+              className="icon"
               viewBox="0 0 1024 1024"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ export const Index = () => {
           <div className="circle" style={{ background: "#fff2e6" }}>
             <svg
               t="1662183377256"
-              class="icon"
+              className="icon"
               viewBox="0 0 1024 1024"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ export const Index = () => {
           <div className="circle" style={{ background: "#fef9e7" }}>
             <svg
               t="1662183457044"
-              class="icon"
+              className="icon"
               viewBox="0 0 1024 1024"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,7 @@ export const Index = () => {
           <div className="circle" style={{ background: "#e9f7f7" }}>
             <svg
               t="1662183499085"
-              class="icon"
+              className="icon"
               viewBox="0 0 1024 1024"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
