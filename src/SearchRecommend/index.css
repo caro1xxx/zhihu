@@ -2,12 +2,14 @@
   background-color: white;
   width: 390px;
   position: absolute;
-  left: 585px;
+  left: 570px;
   top:50px;
   border-radius: 3px;
   box-shadow:rgba(87, 87, 87, 0.3) 0px 0px 5px;
   padding: 10px;
   font-size: 14px;
+  z-index: 99;
+  position:fixed;
 }
 
 .unSearchBody{

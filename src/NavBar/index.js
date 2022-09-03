@@ -1,6 +1,7 @@
 import React, { useState, Fragment } from "react";
 import "./index.css";
 import { Index as SearchRecommend } from "../SearchRecommend";
+import avator from "../assets/img/avator.jpg";
 export const Index = () => {
   const inputFocus = () => {
     setstate({
@@ -43,7 +44,9 @@ export const Index = () => {
           <button className="question">提问</button>
           <div>消息</div>
           <div>私信</div>
-          <div>头像</div>
+          <div>
+            <img className="avator" src={avator} alt=""></img>
+          </div>
         </div>
       </div>
       <SearchRecommend isFocus={state.isShowInputHint}></SearchRecommend>

@@ -83,3 +83,10 @@
 .home{
   border-bottom: #056de8 5px solid;
 }
+.avator{
+  width:35px;
+  height:35px;
+  position: relative;
+  top:10px;
+  border-radius: 5px;
+}
