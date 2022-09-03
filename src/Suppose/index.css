@@ -1,0 +1,48 @@
+.thumksup{
+  display: flex;
+}
+.triangular{
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-bottom: 8px solid #056de8;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+.agreethat{
+  margin: 10px 0px 0px 0px;
+  height: 30px;
+  /* width: 80px; */
+  background-color: #e8f0fd;
+  border-radius: 3px;
+  color: #056de8;
+  line-height: 30px;
+  text-align: center;
+  display: flex;
+  font-size: 15px;
+  align-items: baseline;
+  padding: 0px 10px;
+}
+
+.against{
+  margin: 10px 0px 0px 5px;
+  height: 30px;
+  width: 10px;
+  background-color: #e8f0fd;
+  border-radius: 3px;
+  color: #056de8;
+  padding: 0px 10px;
+  position: relative;
+}
+
+.reverstriangular{
+  position: absolute;
+  top:10px;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top: 8px solid #056de8;
+  border-radius: 3px;
+  margin-right: 5px;
+}

@@ -1,0 +1,31 @@
+.SearchBody{
+  background-color: white;
+  width: 390px;
+  position: absolute;
+  left: 585px;
+  top:50px;
+  border-radius: 3px;
+  box-shadow:rgba(87, 87, 87, 0.3) 0px 0px 5px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.unSearchBody{
+  display: none;
+}
+
+hr{
+  line-height: 0.5;
+  background-color: rgb(211, 211, 211);
+}
+
+.SearchBody div{
+  font-size: 15px;
+  margin: 15px 0px;
+}
+
+.SearchBody h1{
+  font-size: 15px;
+  color: #99a3b4;
+  font-weight: 500;
+}

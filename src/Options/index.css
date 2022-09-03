@@ -1,0 +1,17 @@
+.optionsbody{
+  /* width: 70px; */
+  margin: 15px 0px 0px 30px;
+  display: flex;
+}
+.optionsbody div{
+  margin: 0px 20px;
+  font-size: 14px;
+  color: #a5aebd;
+  position: relative;
+}
+
+.optionsbody svg{
+  position: absolute;
+  top:1px;
+  right: 35px;
+}
