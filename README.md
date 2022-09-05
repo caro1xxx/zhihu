@@ -35,7 +35,7 @@ React version `18.2.0`
         "media":"",
         "endorsement":139
       },
-    ......
+	]
 }
 ```
 
@@ -54,7 +54,6 @@ React version `18.2.0`
       "description":"程序员领域博主",
       "avatar":"https://pic1.zhimg.com/eaa1578ccae23958fa6eb25ea3e6f0b9_l.jpg?source=5a24d060"
     },
-		.....
   ]
 }
 ```
