@@ -14,7 +14,9 @@
   border-right-style: none;
 }
 
-.classify div{
+.classifyLink{
+  text-decoration: none;
+  color: black;
   width: 70px;
   line-height: 50px;
   text-align: center;
