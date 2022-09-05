@@ -1,10 +1,10 @@
-#### 知否 · ![](https://camo.githubusercontent.com/475b49b04214dfa67c1ec8a2837888ae63003feb7b71fd45be30ff360148ad87/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f72656163742e7376673f7374796c653d666c6174) ![](https://camo.githubusercontent.com/1698104e976c681143eb0841f9675c6f802bb7aa832afc0c7a4e719b1f3cf955/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d417061636865253230322e302d626c75652e737667) ![](https://camo.githubusercontent.com/beb57734b0d3f2576a5d6a59be19772d1dbd0e0a8385fba0fe6af4255eb8fe39/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f6379626572636865662e737667)
+# 知否 · ![](https://camo.githubusercontent.com/475b49b04214dfa67c1ec8a2837888ae63003feb7b71fd45be30ff360148ad87/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f72656163742e7376673f7374796c653d666c6174) ![](https://camo.githubusercontent.com/1698104e976c681143eb0841f9675c6f802bb7aa832afc0c7a4e719b1f3cf955/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d417061636865253230322e302d626c75652e737667) ![](https://camo.githubusercontent.com/beb57734b0d3f2576a5d6a59be19772d1dbd0e0a8385fba0fe6af4255eb8fe39/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f6379626572636865662e737667)
 
 React version `18.2.0`
 
 > 仅完成主页的内容以及展开全文阅读,二级导航栏已实现,但无内容
 
-#### 指令
+## 指令
 
 > npm install
 
@@ -12,12 +12,13 @@ React version `18.2.0`
 
 > npm run build
 
-#### 接口
+## 接口
 
 > 接口使用的是fastmock的
 
+> 主页推荐内容接口格式
+
 ```json
-//主页推荐内容接口格式
 {
   "data":[
       {
@@ -36,8 +37,11 @@ React version `18.2.0`
       },
     ......
 }
+```
 
-//推荐作者接口格式
+> 推荐作者接口格式
+
+```json
 {
   "data":[
     {
@@ -55,10 +59,10 @@ React version `18.2.0`
 }
 ```
 
-#### 效果图
+## 效果图
 
 ![](https://raw.githubusercontent.com/caro1xxx/zhihu/c24e426173e5662be4dbd125c6da85bb012e03e9/src/assets/img/%E6%95%88%E6%9E%9C%E5%9B%BE.png)
 
-#### Licencing
+## Licencing
 
 > zhifou is released under the [Apache 2.0 Licence](https://www.apache.org/licenses/LICENSE-2.0) and is covered by [Crown Copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/).
