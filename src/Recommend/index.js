@@ -1,6 +1,8 @@
 import React, { useState, Suspense, useEffect } from "react";
 import "./index.css";
 import { get } from "../utils/request/fetch";
+import { clone } from "../utils/clone";
+
 import { Index as Loading } from "../Loading";
 import { Index as Suppose } from "../Suppose";
 import { Index as Options } from "../Options";
@@ -13,25 +15,21 @@ export const Index = () => {
   // 内容的副本,用于在detail页面展示
   const [copyData, setcopyData] = useState({ data: "2" });
 
-  //传递给 readMore组件的内容
-  const [ReadMoreContent, setReadMoreContent] = useState({
-    data: "",
-    isShowReadMore: false,
-    checkWordId: 0,
-  });
-
+  // 处理数据
   const saveState = (data) => {
+    // 拷贝
+    const result = clone(data);
     // 先处理数据
-    data.forEach((item, index) => {
+    result.forEach((item, index) => {
+      item.isShowReadMore = false;
       if (item.content.length > 20 && item.picture === "null") {
         item.content = item.content.substring(0, 70) + "...";
       } else {
         item.content = item.content.substring(0, 150) + "...";
       }
     });
-    // 在存入,如果是先存入再处理后再存入,这样多了一次diff
     setRecommendContent({
-      data: data,
+      data: result,
     });
   };
 
@@ -51,12 +49,27 @@ export const Index = () => {
     // 这里添加effect依赖为[],防止因为数据发生变化再次触发effect
   }, []);
 
+  // 收齐全文
+  const pickUpMore = (WordId) => {
+    RecommendContent.data.map((item, index) => {
+      if (index === WordId) {
+        item.isShowReadMore = false;
+      }
+    });
+    setRecommendContent({
+      data: RecommendContent.data,
+    });
+  };
+
   //阅读全文
-  const OpenReadMore = (index) => {
-    setReadMoreContent({
-      data: RecommendContent.data[index],
-      isShowReadMore: true,
-      checkWordId: index,
+  const OpenReadMore = (WordId) => {
+    RecommendContent.data.map((item, index) => {
+      if (index === WordId) {
+        item.isShowReadMore = true;
+      }
+    });
+    setRecommendContent({
+      data: RecommendContent.data,
     });
   };
 
@@ -71,9 +84,8 @@ export const Index = () => {
               <div className="title">{item.title}</div>
               {item.picture === "null" ? (
                 <div>
-                  {ReadMoreContent.isShowReadMore &&
-                  index === ReadMoreContent.checkWordId ? (
-                    <ReadMore content={ReadMoreContent.data}></ReadMore>
+                  {item.isShowReadMore ? (
+                    <ReadMore content={copyData.data[index]}></ReadMore>
                   ) : (
                     <div className="detail">
                       {item.content}
@@ -87,10 +99,32 @@ export const Index = () => {
                       </div>
                     </div>
                   )}
-                  <div style={{ display: "flex" }}>
-                    <Suppose count={item.endorsement}></Suppose>
-                    <Options></Options>
-                  </div>
+                  {item.isShowReadMore ? (
+                    <div
+                      style={{
+                        display: "flex",
+                        position: "sticky",
+                        bottom: "0px",
+                        backgroundColor: "#fff",
+                      }}
+                    >
+                      <Suppose count={item.endorsement}></Suppose>
+                      <Options></Options>
+                      <div
+                        className="pickUp"
+                        onClick={() => {
+                          pickUpMore(index);
+                        }}
+                      >
+                        收起^
+                      </div>
+                    </div>
+                  ) : (
+                    <div style={{ display: "flex" }}>
+                      <Suppose count={item.endorsement}></Suppose>
+                      <Options></Options>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div>
